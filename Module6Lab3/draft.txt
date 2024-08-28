@@ -1,0 +1,102 @@
+//
+// main.cpp
+// Module6Lab3
+// Created by Ian Rohan on 10/27/2022
+//
+
+#include <iostream>
+
+
+
+using namespace std;
+
+// Prototype Functions
+int sumofOdd (int firstNumber, int secondNumber, int OddSum);
+int sumofEven (int firstNumber, int secondNumber, int EvenSum);
+int numberofEven (int firstNumber, int secondNumber);
+int numberofOdd (int firstNumber, int secondNumber);
+
+int main() {
+	// Initialize Variables
+	int lowerNumber;
+	int higherNumber;
+	int oddSum = 0;
+	int evenSum = 0;
+	bool doAgain = true;
+	bool lowerLoop = true;
+	bool higherLoop = true;
+
+	// Request and receive information
+	while (doAgain) {
+		cout << "Please enter 2 numbers between 100 and 200" << endl;
+		while (lowerLoop) {
+			cout << "Enter the first number (lowest) in the range: " ;
+			cin >> lowerNumber;
+			if (100 <= lowerNumber && lowerNumber <= 200) {
+			break;
+			}
+		}
+		while (higherLoop) {
+			cout << "Enter the second number (highest) in the range: ";
+			cin >> higherNumber;
+			if (100 <= higherNumber && higherNumber <=200) {
+			break;
+			}
+		}
+		if (lowerNumber < higherNumber) {
+			doAgain = false;
+			cout << endl;
+		}
+		else {
+			cout << endl;
+		}
+	}
+	cout << "Sum of all even numbers in the range " << lowerNumber << " to " << higherNumber << " is " << sumofEven(lowerNumber, higherNumber, evenSum) << endl;
+	cout << "Count of all even numbers in the range " << lowerNumber << " to " << higherNumber << " is " << numberofEven(lowerNumber, higherNumber) << endl;
+	cout << "Sum of all odd numbers in the range " << lowerNumber << " to " << higherNumber << " is " << sumofOdd(lowerNumber, higherNumber, oddSum) << endl;
+	cout << "Count of all odd numbers in the range " << lowerNumber << " to " << higherNumber << " is " << numberofOdd(lowerNumber, higherNumber) << endl;
+	return 0;
+
+	}
+
+// Create Functions
+	// Sum of Odd Numbers
+	int sumofOdd (int pLow, int pHigh, int pOddSum) {
+		for(int i = pLow; i <= pHigh; i++) {
+				if (i % 2 != 0) {
+					pOddSum = pOddSum + i;
+				}
+		}
+		return pOddSum;
+	}
+
+	// Sum of Even Numbers
+	int sumofEven (int pLow, int pHigh, int pEvenSum) {
+		for(int i = pLow; i <= pHigh; i++) {
+				if (i % 2 == 0) {
+					pEvenSum = pEvenSum + i;
+				}
+			}
+		return pEvenSum;
+	}
+
+	// Count of all Odd Numbers
+	int numberofOdd (int pLow, int pHigh) {
+		int countOdd = 0;
+		for(int i = pLow; i <= pHigh; i++) {
+						if (i % 2 != 0) {
+							countOdd = countOdd + 1;
+						}
+					}
+		return countOdd;
+	}
+
+	int numberofEven (int pLow, int pHigh) {
+			int countEven = 0;
+			for(int i = pLow; i <= pHigh; i++) {
+							if (i % 2 == 0) {
+								countEven = countEven + 1;
+							}
+						}
+			return countEven;
+		}
