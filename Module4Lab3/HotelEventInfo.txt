@@ -1,0 +1,9 @@
+
+Event Name: Wedding
+Cost of renting one room without discount: $100.00
+Cost of all rooms without discount: $300.00
+Cost of renting one room with discount: $90.00
+Cost of renting all rooms with discount: $270.00
+Total Discount Applied: $30.00
+Tax: $21.60
+Total Owed by Customer for all rooms: $291.60
